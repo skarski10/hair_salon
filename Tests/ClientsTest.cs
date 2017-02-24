@@ -18,7 +18,7 @@ namespace HairSalonApp
         {
             int result = Client.GetAll().Count;
 
-            Assert.Equal(1, result);
+            Assert.Equal(0, result);
         }
 
         [Fact]
