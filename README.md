@@ -40,6 +40,14 @@ Program will return true if the client item has been found in the database
 * **Input:** Jerry Smith
 * **Output:** true
 
+Program will be able to delete single client entries.
+* **Input:** Beth Smith
+* **Output:** (no entry)
+
+Program will be able to edit single client entries.
+* **Input:** Bird Person
+* **Output:** Birdperson
+
 The program will
 * **Input:**
 * **Output:**

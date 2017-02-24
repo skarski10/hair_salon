@@ -113,7 +113,7 @@ namespace HairSalonApp
 
           while(rdr.Read())
           {
-            foundClientId = rdr.GetInt32(1);
+            foundClientId = rdr.GetInt32(0);
             foundClientName = rdr.GetString(1);
             foundStylistId = rdr.GetInt32(2);
           }
