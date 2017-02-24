@@ -60,6 +60,8 @@ namespace HairSalonApp
             return stylistList;
         }
 
+        
+
         public void Save()
         {
             SqlConnection conn = DB.Connection();

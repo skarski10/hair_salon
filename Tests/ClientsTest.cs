@@ -37,12 +37,11 @@ namespace HairSalonApp
         {
             // Arrange
             Client testClient = new Client("Squanchy", 1);
-            Client testClient1 = new Client("Squanchy1", 1);
 
             // Act
             testClient.Save();
             List<Client> result = Client.GetAll();
-            List<Client> testList = new List<Client>{testClient1};
+            List<Client> testList = new List<Client>{testClient};
 
             // Assert
             Assert.Equal(testList, result);
