@@ -100,8 +100,6 @@ namespace HairSalonApp
 
 
 
-
-
         public static void DeleteAll()
         {
             SqlConnection conn = DB.Connection();
