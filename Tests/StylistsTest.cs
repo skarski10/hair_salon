@@ -95,28 +95,35 @@ namespace HairSalonApp
             Assert.Equal(newName, result);
         }
 
-        // [Fact]
-        // public void Test_Delete_DeletesStylistFromDatabase()
-        // {
-        //     //Arrange
-        //     string name1 = "Morty";
-        //     Stylist testStylist1 = new Stylist(name1, 1);
-        //     testStylist1.Save();
-        //
-        //     string name2 = "Summer";
-        //     Stylist testStylist2 = new Stylist(name2, 1);
-        //     testStylist2.Save();
-        //
-        //     //Act
-        //     testStylist1.Delete();
-        //     List<Stylist> resultStylist = Stylist.GetAll();
-        //     List<Stylist> testStylistList = new List<Stylist> {testStylist2};
-        //
-        //
-        //     //Assert
-        //     Assert.Equal(testStylistList, resultStylist);
-        // }
+        [Fact]
+        public void Test_Delete_DeletesStylistFromDatabase()
+        {
+            //Arrange
+            string name1 = "Morty";
+            Stylist testStylist1 = new Stylist(name1);
+            testStylist1.Save();
 
+            string name2 = "Summer";
+            Stylist testStylist2 = new Stylist(name2);
+            testStylist2.Save();
+
+            Client testClient1 = new Client("Squanchy", testStylist1.GetStylistId());
+            testClient1.Save();
+            Client testClient2 = new Client("Mr. Poppybutthole", testStylist2.GetStylistId());
+            testClient2.Save();
+
+            //Act
+            // testStylist1.Delete();
+            List<Stylist> resultStylist = Stylist.GetAll();
+            List<Stylist> testStylistList = new List<Stylist> {testStylist2};
+
+            List<Client> resultClients = Client.GetAll();
+            List<Client> testClientList = new List<Client> {testClient2};
+
+            //Assert
+            Assert.Equal(testStylistList, resultStylist);
+            Assert.Equal(testClientList, resultClients);
+        }
 
 
 

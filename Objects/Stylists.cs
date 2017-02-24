@@ -189,6 +189,30 @@ namespace HairSalonApp
             }
         }
 
+        public void Delete()
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            List<Client> theseClients = this.GetClients();
+            foreach(Client entry in theseClients)
+            {
+                entry.Delete();
+            }
+            SqlCommand cmd = new SqlCommand("DELETE FROM stylists WHERE id=@StylistId;", conn);
+
+            SqlParameter idParameter = new SqlParameter();
+            idParameter.ParameterName = "@StylistId";
+            idParameter.Value = this.GetStylistId();
+            cmd.Parameters.Add(idParameter);
+            cmd.ExecuteNonQuery();
+
+            if (conn != null)
+            {
+                conn.Close();
+            }
+        }
+
 
 
 
@@ -218,8 +242,8 @@ namespace HairSalonApp
         }
 
         public void SetStylistName(string newName)
-    {
-        _name = newName;
-    }
+        {
+            _name = newName;
+        }
     }
 }
