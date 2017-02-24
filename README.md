@@ -17,7 +17,7 @@ Program will return true if a stylist has a unique id and has been saved to an o
 * **Output:** true
 
 Program will return true if the stylist item has been found in the database
-* **Input:** Mr. Meeseeks
+* **Input:** Mr. MeeSeeks
 * **Output:** true
 
 Program recognizes two client instances as equal if they have the same name

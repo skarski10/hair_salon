@@ -48,7 +48,7 @@ namespace HairSalonApp
             // Arrange
             Stylist testStylist = new Stylist("Summer");
             testStylist.Save();
-
+            
             // Act
             Stylist savedStylist = Stylist.GetAll()[0];
 
@@ -57,6 +57,20 @@ namespace HairSalonApp
 
             // Assert
             Assert.Equal(testId, result);
+        }
+
+        [Fact]
+        public void Test_FindStylistId()
+        {
+            //Arrange
+            Stylist testStylist = new Stylist("Mr. MeeSeeks");
+            testStylist.Save();
+
+            //Act
+            Stylist foundStylistId = Stylist.Find(testStylist.GetStylistId());
+
+            //Assert
+            Assert.Equal(testStylist, foundStylistId);
         }
 
 
