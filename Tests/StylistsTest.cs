@@ -15,5 +15,17 @@ namespace HairSalonApp
 
             Assert.Equal(0, result);
         }
+
+        [Fact]
+        public void Test_ReturnTrueIfEqual()
+        {
+            //Arrange, Act
+            Stylist firstStylist = new Stylist("Rick");
+            Stylist secondStylist = new Stylist("Rick");
+
+            //Assert
+            Assert.Equal(firstStylist, secondStylist);
+        }
+        
     }
 }
