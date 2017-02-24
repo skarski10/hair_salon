@@ -106,7 +106,7 @@ namespace HairSalonApp
 
             while (rdr.Read())
             {
-                foundStylistId = rdr.GetInt32(1);
+                foundStylistId = rdr.GetInt32(0);
                 foundStylistName = rdr.GetString(1);
             }
 
