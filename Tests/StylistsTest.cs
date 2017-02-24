@@ -6,8 +6,13 @@ using System.Data.SqlClient;
 
 namespace HairSalonApp
 {
-    public class HairSalonTest : IDisposable
+    public class StylistTest : IDisposable
     {
+        public StylistTest()
+        {
+            DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
+        }
+
         [Fact]
         public void Test_DatabaseEmpty()
         {
@@ -48,7 +53,7 @@ namespace HairSalonApp
             // Arrange
             Stylist testStylist = new Stylist("Summer");
             testStylist.Save();
-            
+
             // Act
             Stylist savedStylist = Stylist.GetAll()[0];
 
