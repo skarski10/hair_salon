@@ -35,14 +35,28 @@ namespace HairSalonApp
 
 
 
-            // Get an id for each stylist and take you to the clicked on stylists restaurant page
+            // Get an id for each stylist and take you to the clicked on stylists client page
             Get["/stylists/{id}"] = parameters => {
                 Dictionary<string, object> model = new Dictionary<string, object>();
-                Cuisine selectedCuisine = Cuisine.Find(parameters.id);
-                List<Restaurant> addedRestaurants = selectedCuisine.GetRestaurants();
-                model.Add("restaurant", addedRestaurants);
-                model.Add("stylist", selectedCuisine);
-                return View["restaurants.cshtml", model];
+                Stylist selectedStylist = Stylist.Find(parameters.id);
+                List<Client> addedClients = selectedStylist.GetClients();
+                model.Add("client", addedClients);
+                model.Add("stylist", selectedStylist);
+                return View["clients.cshtml", model];
+            };
+
+            // Take the client entered and post in on the clients page
+            Post["/stylist/{id}/clients"] = parameters => {
+                Dictionary<string, object> model = new Dictionary<string, object>();
+                Stylist selectedStylist = Stylist.Find(Request.Form["stylist"]);
+                List<Client> stylistClient = selectedStylist.GetClients();
+                string clientEntered = Request.Form["client"];
+                Client newClient = new Client(clientEntered, selectedStylist.GetStylistId());
+                newClient.Save();
+                stylistClient.Add(newClient);
+                model.Add("client", stylistClient);
+                model.Add("stylist", selectedStylist);
+                return View["clients.cshtml", model];
             };
 
 
