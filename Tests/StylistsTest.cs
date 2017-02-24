@@ -88,6 +88,7 @@ namespace HairSalonApp
         public void Dispose()
         {
             Stylist.DeleteAll();
+            Client.DeleteAll();
         }
     }
 }

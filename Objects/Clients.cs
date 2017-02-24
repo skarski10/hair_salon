@@ -61,45 +61,56 @@ namespace HairSalonApp
             return AllClients;
         }
 
-            public void Save()
-           {
-               SqlConnection conn = DB.Connection();
-               conn.Open();
+        public void Save()
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
 
-               SqlCommand cmd = new SqlCommand("INSERT INTO clients (name, stylist_id) OUTPUT INSERTED.id VALUES (@ClientName, @StylistId);", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO clients (name, stylist_id) OUTPUT INSERTED.id VALUES (@ClientName, @StylistId);", conn);
 
-               SqlParameter nameParameter = new SqlParameter();
-               nameParameter.ParameterName = "@ClientName";
-               nameParameter.Value = this.GetClientName();
+            SqlParameter nameParameter = new SqlParameter();
+            nameParameter.ParameterName = "@ClientName";
+            nameParameter.Value = this.GetClientName();
 
-               SqlParameter stylistIdParameter = new SqlParameter();
-               stylistIdParameter.ParameterName = "@StylistId";
-               stylistIdParameter.Value = this.GetStylistId();
+            SqlParameter stylistIdParameter = new SqlParameter();
+            stylistIdParameter.ParameterName = "@StylistId";
+            stylistIdParameter.Value = this.GetStylistId();
 
-               cmd.Parameters.Add(nameParameter);
-               cmd.Parameters.Add(stylistIdParameter);
+            cmd.Parameters.Add(nameParameter);
+            cmd.Parameters.Add(stylistIdParameter);
 
-               SqlDataReader rdr = cmd.ExecuteReader();
+            SqlDataReader rdr = cmd.ExecuteReader();
 
-               while(rdr.Read())
-               {
-                   this._id = rdr.GetInt32(0);
-               }
-               if (rdr != null)
-               {
-                   rdr.Close();
-               }
-               if (conn != null)
-               {
-                   conn.Close();
-               }
-           }
-
-
+            while(rdr.Read())
+            {
+                this._id = rdr.GetInt32(0);
+            }
+            if (rdr != null)
+            {
+                rdr.Close();
+            }
+            if (conn != null)
+            {
+                conn.Close();
+            }
+        }
 
 
 
 
+
+
+
+
+        public static void DeleteAll()
+        {
+            SqlConnection conn = DB.Connection();
+            conn.Open();
+
+            SqlCommand cmd = new SqlCommand("DELETE FROM clients;", conn);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+        }
 
         public int GetClientId()
         {

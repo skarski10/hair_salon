@@ -1,6 +1,6 @@
 ##Specs
 
-Check to see if database is empty
+Check to see if stylist table database is empty
 * **Input:** ""
 * **Output:** true
 
@@ -18,6 +18,10 @@ Program will return true if a stylist has a unique id and has been saved to an o
 
 Program will return true if the stylist item has been found in the database
 * **Input:** Mr. MeeSeeks
+* **Output:** true
+
+Check to see if client table database is empty
+* **Input:** ""
 * **Output:** true
 
 Program recognizes two client instances as equal if they have the same name
