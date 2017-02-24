@@ -85,8 +85,6 @@ namespace HairSalonApp
             Stylist testStylist = new Stylist("Ricky", 1);
             testStylist.Save();
             string newName = "Rick";
-            string newName1 = "Rick1";
-
 
             //Act
             testStylist.Update(newName);
@@ -94,7 +92,7 @@ namespace HairSalonApp
             string result = testStylist.GetStylistName();
 
             //Assert
-            Assert.Equal(newName1, result);
+            Assert.Equal(newName, result);
         }
 
         // [Fact]
