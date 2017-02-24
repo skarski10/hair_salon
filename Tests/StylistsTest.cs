@@ -113,7 +113,7 @@ namespace HairSalonApp
             testClient2.Save();
 
             //Act
-            // testStylist1.Delete();
+            testStylist1.Delete();
             List<Stylist> resultStylist = Stylist.GetAll();
             List<Stylist> testStylistList = new List<Stylist> {testStylist2};
 
