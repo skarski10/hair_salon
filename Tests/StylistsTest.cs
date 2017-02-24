@@ -13,7 +13,7 @@ namespace HairSalonApp
         {
             int result = Stylist.GetAll().Count;
 
-            Assert.Equal(2, result);
+            Assert.Equal(0, result);
         }
     }
 }
