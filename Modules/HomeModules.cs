@@ -59,6 +59,19 @@ namespace HairSalonApp
                 return View["clients.cshtml", model];
             };
 
+            // Take you to the page to edit a client
+            Get["/clients/{clientId}/edit"] = parameters => {
+                Client selectedClient = Client.Find(parameters.clientId);
+                return View["edit_client.cshtml", selectedClient];
+            };
+
+            // Edit a client
+            Patch["/clients/{clientId}/updated"] = parameters => {
+                Client selectedClient = Client.Find(parameters.clientId);
+                selectedClient.Update(Request.Form["client-name"]);
+                return View["client_updated.cshtml"];
+            };
+
 
 
 

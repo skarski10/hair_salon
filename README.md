@@ -48,6 +48,14 @@ Program will be able to delete single client entries.
 * **Input:** Beth Smith
 * **Output:** (no entry)
 
+Program will be able to edit single stylist entries.
+* **Input:** Ricky
+* **Output:** Rick
+
+Program will be able to delete single stylist entries.
+* **Input:** Morty
+* **Output:** (no entry)
+
 
 The program will
 * **Input:**
