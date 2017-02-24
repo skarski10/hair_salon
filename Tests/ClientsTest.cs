@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 namespace HairSalonApp
 {
-    public class ClinetTest
+    public class ClinetTest : IDisposable
     {
         public void ClientTest()
         {
@@ -73,7 +73,10 @@ namespace HairSalonApp
 
 
 
-
-
+        public void Dispose()
+        {
+            Stylist.DeleteAll();
+            Client.DeleteAll();
+        }
     }
 }
