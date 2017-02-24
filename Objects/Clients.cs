@@ -27,7 +27,7 @@ namespace HairSalonApp
                 Client newClient = (Client) otherClient;
                 bool clientEquality = this.GetClientName() == newClient.GetClientName();
                 bool stylistIdEquality = this.GetStylistId() == newClient.GetStylistId();
-                return false;
+                return (clientEquality && stylistIdEquality);
             }
         }
 
