@@ -1,13 +1,15 @@
 @{
   Layout = "Shared/_Layout.cshtml";
 }
-
+<div class="row">
+    <h2>Add a new stylists below</h2>
+</div>
 <div class="row">
     <div class="form-group">
         <form class="" action="/stylists" method="post">
-            <label for="stylist">Add a stylist</label>
+            <label for="stylist">Stylist Name:</label>
             <input type="text" name="stylist" id="stylist">
-            <button type="submit" name="button">Add</button>
+            <button type="submit" class="btn btn-success">Add</button>
         </form>
     </div>
 </div>

@@ -1,0 +1,24 @@
+.jumbotron {
+    background-image: url(/content/img/background1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    color: white;
+    text-align: center;
+    height: 600px;
+    font-family: Baloo;
+    text-shadow: 2px 2px black;
+    font-family: Baloo;
+}
+
+body {
+    background-image: url(/content/img/mrmeeseeksface.png);
+
+    /*background-repeat: no-repeat;*/
+    background-size: cover;
+}
+
+ a {
+  font-family: Baloo;
+  color: white;
+}

@@ -170,7 +170,7 @@ namespace HairSalonApp
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd= new SqlCommand("DELETE FROM clients WHERE id=@ClientId", conn);
+            SqlCommand cmd = new SqlCommand("DELETE FROM clients WHERE id=@ClientId", conn);
             SqlParameter idParameter = new SqlParameter();
             idParameter.ParameterName = "@ClientId";
             idParameter.Value = this.GetClientId();

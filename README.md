@@ -1,3 +1,9 @@
+#Hair Salon
+**C# third week Friday code review for Epicodus, 02.24.17**
+###By Kory Skarbek
+##Description
+The program will be able to add a list of the stylists, and for each stylist, add clients who see that stylist. The stylists work independently, so each client only belongs to a single stylist.
+
 ##Specs
 
 Check to see if stylist table database is empty
@@ -56,7 +62,27 @@ Program will be able to delete single stylist entries.
 * **Input:** Morty
 * **Output:** (no entry)
 
+##Setup
+* Open up the terminal.
+* Clone this repository.
+* Compile program
+* Go to localhost:5004
+#### Importing databases with SSMS
+* Open SSMS
+* Select File > Open > File and select your .sql file.
+* If the database does not already exist, add the following lines to the top of the script file
+* CREATE DATABASE hair_salon
+* GO
+* Save the file.
+* Click ! Execute.
+* Verify that the database has been created and the schema and/or data imported.
 
-The program will
-* **Input:**
-* **Output:**
+##Technologies Used
+C#
+HTML
+CSS
+Bootstrap
+
+##Legal
+Copyright(c) 2017 Kory Skarbek
+This software is licensed under the MIT license.

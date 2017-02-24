@@ -8,14 +8,14 @@
 
 <form action="/stylist/@Model["stylist"].GetStylistId()/clients" method="post">
     <input id="stylist" type="hidden" name="stylist" value='@Model["stylist"].GetStylistId()'>
-    <label for="client">Clients:</label>
+    <label for="client">Client Name:</label>
     <input type="text" name="client" id="client" class="form-control">
-    <button type="submit" class="btn">Add</button>
+    <button type="submit" class="btn btn-success">Add</button>
 </form>
 
 
 <div class="row">
-    <h1>Clientss</h1>
+    <h1>Clients</h1>
 </div>
 
 
@@ -25,7 +25,7 @@
         <ul>
             @foreach (var client in @Model["client"])
             {
-                <h3>@client.GetClientName() | <a href="/clients/@client.GetClientId()/edit">Edit</a> | <a href="/stylists/@Model["stylist"].GetStylistId()/clients/@client.GetClientId()">Delete</a></li></h3>
+                <h3>@client.GetClientName() | <a href="/clients/@client.GetClientId()/edit">Edit</a> | <a href="/clients/@client.GetClientId()/delete">Delete</a></li></h3>
             }
         </ul>
     </div>
