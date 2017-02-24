@@ -53,7 +53,7 @@ namespace HairSalonApp
             Stylist savedStylist = Stylist.GetAll()[0];
 
             int result = savedStylist.GetStylistId();
-            int testId = 3;
+            int testId = testStylist.GetStylistId();
 
             // Assert
             Assert.Equal(testId, result);
