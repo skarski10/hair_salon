@@ -14,6 +14,14 @@ namespace HairSalonApp
         }
 
         [Fact]
+        public void Test_DatabaseEmpty()
+        {
+            int result = Client.GetAll().Count;
+
+            Assert.Equal(1, result);
+        }
+
+        [Fact]
         public void Test_ReturnTrueIfEqual()
         {
             //Arrange, Act
@@ -23,5 +31,32 @@ namespace HairSalonApp
             //Assert
             Assert.Equal(firstClient, secondClient);
         }
+
+        // [Fact]
+        // public void Test_Save_SavesClient()
+        // {
+        //     // Arrange
+        //     Client testClient = new Client("Squanchy");
+        //
+        //     // Act
+        //     testClient.Save();
+        //     List<Client> result = Client.GetAll();
+        //     List<Client> testList = new List<Client>{testClient};
+        //
+        //     // Assert
+        //     Assert.Equal(testList, result);
+        // }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
