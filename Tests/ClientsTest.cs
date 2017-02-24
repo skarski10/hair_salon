@@ -51,7 +51,7 @@ namespace HairSalonApp
         public void Test_SaveAssignsIdToObject()
         {
             // Arrange
-            Client testClient = new Client("Summer", 1);
+            Client testClient = new Client("Tammy", 1);
             testClient.Save();
 
             // Act
@@ -63,6 +63,21 @@ namespace HairSalonApp
             // Assert
             Assert.Equal(testId, result);
         }
+
+        [Fact]
+        public void Test_FindStylistId()
+        {
+            //Arrange
+            Client testClient = new Client("Jerry Smith", 1);
+            testClient.Save();
+
+            //Act
+            Client foundClientId = Client.Find(testClient.GetClientId());
+
+            //Assert
+            Assert.Equal(testClient, foundClientId);
+        }
+
 
 
 
