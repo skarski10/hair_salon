@@ -26,6 +26,21 @@ namespace HairSalonApp
             //Assert
             Assert.Equal(firstStylist, secondStylist);
         }
-        
+
+        [Fact]
+        public void Test_Save_SavesStylist()
+        {
+            // Arrange
+            Stylist testStylist = new Stylist("Morty");
+
+            // Act
+            testStylist.Save();
+            List<Stylist> result = Stylist.GetAll();
+            List<Stylist> testList = new List<Stylist>{testStylist};
+
+            // Assert
+            Assert.Equal(testList, result);
+        }
+
     }
 }
