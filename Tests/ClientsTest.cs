@@ -6,9 +6,9 @@ using System.Data.SqlClient;
 
 namespace HairSalonApp
 {
-    public class ClinetTest : IDisposable
+    public class ClientTest : IDisposable
     {
-        public void ClientTest()
+        public ClientTest()
         {
             DBConfiguration.ConnectionString = "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=hair_salon_test;Integrated Security=SSPI;";
         }
@@ -76,6 +76,23 @@ namespace HairSalonApp
 
             //Assert
             Assert.Equal(testClient, foundClientId);
+        }
+
+        [Fact]
+        public void Test_EditClientName()
+        {
+            //Arrange
+            Client testClient = new Client("Bird Person", 1);
+            testClient.Save();
+            string newName = "Birdperson";
+
+            //Act
+            testClient.Update(newName);
+
+            string result = testClient.GetClientName();
+
+            //Assert
+            Assert.Equal(newName, result);
         }
 
 
