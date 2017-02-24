@@ -65,12 +65,12 @@ namespace HairSalonApp
             SqlConnection conn = DB.Connection();
             conn.Open();
 
-            SqlCommand cmd = new SqlCommand("INSERT INTO stylist (name) OUTPUT INSERTED.id VALUES (@StylistName);", conn);
+            SqlCommand cmd = new SqlCommand("INSERT INTO stylists (name) OUTPUT INSERTED.id VALUES (@StylistName);", conn);
 
-            // SqlParameter nameParameter = new SqlParameter();
-            // nameParameter.ParameterName = "@StylistName";
-            // nameParameter.Value = this.GetStylistName();
-            // cmd.Parameters.Add(nameParameter);
+            SqlParameter nameParameter = new SqlParameter();
+            nameParameter.ParameterName = "@StylistName";
+            nameParameter.Value = this.GetStylistName();
+            cmd.Parameters.Add(nameParameter);
 
             SqlDataReader rdr = cmd.ExecuteReader();
 
