@@ -1,0 +1,16 @@
+@{
+  Layout = "Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <h1>Stylists</h1>
+</div>
+
+<div class="row">
+    <div class="">
+        @foreach (var name in Model)
+        {
+            <h3><a href="/stylists/@name.GetStylistId()">@name.GetStylistName()</a> | <a href="/stylists/@name.GetStylistId()/edit">Edit</a> | <a href="/stylists/@name.GetStylistId()">Delete</a></li></h3>
+        }
+    </div>
+</div>
