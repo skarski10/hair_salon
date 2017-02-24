@@ -25,8 +25,7 @@
         <ul>
             @foreach (var client in @Model["client"])
             {
-                <h3>@client.GetClientName() | <a href="/clients/@client.GetId()/edit">Edit</a> | <a href="/stylists/@Model["stylist"].GetStylistId()/clients/@client.GetId()">Delete</a></li></h3>
-                <h2>@client.GetName()</h2>
+                <h3>@client.GetClientName() | <a href="/clients/@client.GetClientId()/edit">Edit</a> | <a href="/stylists/@Model["stylist"].GetStylistId()/clients/@client.GetClientId()">Delete</a></li></h3>
             }
         </ul>
     </div>
