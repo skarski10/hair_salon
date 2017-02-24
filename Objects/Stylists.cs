@@ -15,6 +15,20 @@ namespace HairSalonApp
             _name = name;
         }
 
+        public override bool Equals(System.Object otherStylist)
+        {
+            if (!(otherStylist is Stylist))
+            {
+                return false;
+            }
+            else
+            {
+                Stylist newStylist = (Stylist) otherStylist;
+                bool nameEquality = this.GetStylistName() == newStylist.GetStylistName();
+                return (nameEquality);
+            }
+        }
+
         public static List<Stylist> GetAll()
         {
             List<Stylist> stylistList = new List<Stylist> {};
@@ -44,6 +58,16 @@ namespace HairSalonApp
             }
 
             return stylistList;
+        }
+
+        public int GetStylistId()
+        {
+            return _id;
+        }
+
+        public string GetStylistName()
+        {
+            return _name;
         }
     }
 }
